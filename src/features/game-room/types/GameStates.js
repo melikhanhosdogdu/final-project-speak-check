@@ -1,6 +1,6 @@
 export const GameState = Object.freeze({
-  IDLE, // When user open page
-  CREATE_GAME_ROOM, // Show game create compoennt
-  LOBBY, // Lobby Stete,
-  ROOM, // Playing Game
+  IDLE: "IDLE", // When user open page
+  CREATE_GAME_ROOM: "CREATE_GAME_ROOM", // Show game create compoennt
+  LOBBY: "LOBBY", // Lobby Stete,
+  ROOM: "ROOM", // Playing Game
 });

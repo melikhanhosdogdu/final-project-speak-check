@@ -1,7 +1,11 @@
 function FeedPage() {
   const feedList = [];
 
-  return <></>;
+  return (
+    <>
+      <h1>Feed Page</h1>
+    </>
+  );
 }
 
 export default FeedPage;
