@@ -6,7 +6,7 @@ import Input from "../../components/Input";
 import Button from "../../components/Button";
 import "./Login.css";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const loginSchema = z.object({
   email: z.email("Please enter a valid email"),
@@ -15,6 +15,7 @@ const loginSchema = z.object({
 
 function Login() {
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -28,6 +29,8 @@ function Login() {
     await new Promise((resolve) => setTimeout(resolve, 2000));
     console.log(data);
     setIsLoading(false);
+    // Navigate to feed page after successful login
+    navigate("/");
   };
 
   return (
