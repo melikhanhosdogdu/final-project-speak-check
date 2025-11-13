@@ -1,10 +1,32 @@
+import { useState } from "react";
+import FeedHeader from "./FeedHeader";
+import "./FeedPage.css";
+
+import Modal from "../../components/Modal.jsx";
+
 function FeedPage() {
-  const feedList = [];
+  const supportedLanguages = ["English", "Spanish", "French", "German"];
+  const [selectedLanguage, setSelectedLanguage] = useState("English");
+  const [isAddingPostModalOpen, setIsAddingPostModalOpen] = useState(false);
+  const handleLanguageChange = (language) => {
+    setSelectedLanguage(language);
+  };
 
   return (
-    <>
-      <h1>Feed Page</h1>
-    </>
+    <div className="feed-page">
+      <Modal
+        isOpen={isAddingPostModalOpen}
+        onClose={() => setIsAddingPostModalOpen(false)}
+      >
+        <h1>Add a New Post</h1>
+      </Modal>
+      <FeedHeader
+        supportedLanguages={supportedLanguages}
+        selectedLanguage={selectedLanguage}
+        onLanguageChange={handleLanguageChange}
+        onAddPostClick={() => setIsAddingPostModalOpen(true)}
+      />
+    </div>
   );
 }
 

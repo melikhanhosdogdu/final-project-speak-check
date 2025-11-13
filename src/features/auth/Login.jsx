@@ -29,7 +29,6 @@ function Login() {
     await new Promise((resolve) => setTimeout(resolve, 2000));
     console.log(data);
     setIsLoading(false);
-    // Navigate to feed page after successful login
     navigate("/");
   };
 
